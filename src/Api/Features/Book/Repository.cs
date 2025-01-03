@@ -2,12 +2,12 @@ using Common;
 
 namespace Api.Features.Book;
 
-internal interface IRepository
+public interface IBookRepository
 {
     Task InsertAsync(Common.Book book, CancellationToken ct);
 }
 
-internal sealed class Repository(IMongoDbContext dbContext, ILogger<Repository> logger) : IRepository
+public sealed class BookRepository(IMongoDbContext dbContext, ILogger<BookRepository> logger) : IBookRepository
 {
     public async Task InsertAsync(Common.Book book, CancellationToken ct)
     {

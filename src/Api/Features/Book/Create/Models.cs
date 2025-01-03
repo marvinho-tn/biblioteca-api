@@ -3,7 +3,7 @@ using FluentValidation;
 
 namespace Api.Features.Book.Create;
 
-internal sealed record Request(
+public sealed record Request(
     string Title,
     string Author,
     string ISBN,
@@ -15,7 +15,7 @@ internal sealed record Request(
     string Genre
 );
 
-internal sealed class Validator : Validator<Request>
+public sealed class Validator : Validator<Request>
 {
     public Validator()
     {
@@ -29,6 +29,6 @@ internal sealed class Validator : Validator<Request>
     }
 }
 
-internal sealed record Response(
+public sealed record Response(
     string Id
 );

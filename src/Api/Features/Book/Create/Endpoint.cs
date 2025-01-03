@@ -2,7 +2,9 @@ using FastEndpoints;
 
 namespace Api.Features.Book.Create;
 
-internal sealed class Endpoint(IRepository repository, ILogger<Endpoint> logger) : Endpoint<Request, Response, Mapper>
+public sealed class Endpoint(
+    IBookRepository bookRepository,
+    ILogger<Endpoint> logger) : Endpoint<Request, Response, Mapper>
 {
     public override void Configure()
     {
@@ -13,14 +15,14 @@ internal sealed class Endpoint(IRepository repository, ILogger<Endpoint> logger)
     public override async Task HandleAsync(Request req, CancellationToken ct)
     {
         logger.LogInformation("Request received for book creation");
-        
+
         var book = Map.ToEntity(req);
-        
+
         book.Id = Guid.NewGuid().ToString();
 
-        await repository.InsertAsync(book, ct);
-        
-        var @event = new Event
+        await bookRepository.InsertAsync(book, ct);
+
+        var @event = new BookCreatedEvent
         {
             BookId = book.Id
         };

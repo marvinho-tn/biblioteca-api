@@ -2,7 +2,7 @@ using FastEndpoints;
 
 namespace Api.Features.Book.Create;
 
-internal sealed class Mapper : Mapper<Request, Response, Common.Book>
+public sealed class Mapper : Mapper<Request, Response, Common.Book>
 {
     public override Response FromEntity(Common.Book e)
     {
