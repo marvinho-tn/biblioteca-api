@@ -35,7 +35,7 @@ public class Book
     /// <summary>
     /// A data de publicação do livro.
     /// </summary>
-    public DateTime PublisherDate { get; set; }
+    public DateTime PublishedDate { get; set; }
 
     /// <summary>
     /// O número de páginas do livro.

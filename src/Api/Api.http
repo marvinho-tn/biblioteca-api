@@ -1,0 +1,14 @@
+POST {{baseUrl}}/books
+Content-Type: application/json
+
+{
+  "Title": "As Aventuras Surreais no Reino da Abstração",
+  "Author": "Debugador de Sonhos",
+  "ISBN": "987-654-3210-X",
+  "Publisher": "Editora Universo Paralelo",
+  "PublishedDate": "2045-10-21T13:45:00Z",
+  "Pages": 999,
+  "AvailableCopies": 7,
+  "TotalCopies": 42,
+  "Genre": "Fantasia Cósmica"
+}
