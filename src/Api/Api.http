@@ -12,3 +12,7 @@ Content-Type: application/json
   "TotalCopies": 42,
   "Genre": "Fantasia Cósmica"
 }
+
+###
+GET {{baseUrl}}/authors/search?query=
+Accept: application/json

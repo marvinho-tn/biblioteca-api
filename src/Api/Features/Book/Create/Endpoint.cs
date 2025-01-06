@@ -22,10 +22,7 @@ public sealed class Endpoint(
 
         await bookRepository.InsertAsync(book, ct);
 
-        var @event = new BookCreatedEvent
-        {
-            BookId = book.Id
-        };
+        var @event = new BookCreatedEvent(book.Id);
 
         await PublishAsync(@event, Mode.WaitForAll, ct);
 

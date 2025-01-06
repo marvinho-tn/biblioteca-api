@@ -3,7 +3,7 @@ using MongoDB.Bson.Serialization.Attributes;
 
 namespace Common;
 
-public class Book
+public record Book
 {
     /// <summary>
     /// Um identificador único para o livro.
@@ -58,7 +58,7 @@ public class Book
     public string Genre { get; set; }
 }
 
-public class Loan
+public record Loan
 {
     /// <summary>
     /// Um identificador único para o empréstimo.

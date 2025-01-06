@@ -4,10 +4,7 @@ using FastEndpoints;
 
 namespace Api.Features.Book.Create;
 
-public sealed class BookCreatedEvent
-{
-    public string BookId { get; set; }
-}
+public sealed record BookCreatedEvent(string BookId);
 
 public sealed class BookCreatedEventHandler(ProducerConfig producerConfig, ILogger<BookCreatedEventHandler> logger) : IEventHandler<BookCreatedEvent>
 {
